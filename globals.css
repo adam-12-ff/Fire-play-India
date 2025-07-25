@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 5% 13%; /* #1f2128 */
+    --foreground: 0 0% 98%;
+
+    --card: 240 5% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 5% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 277 87% 53%; /* #A020F0 */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 98 98% 55%; /* #7CFC00 */
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 25%;
+    --input: 240 4% 25%;
+    --ring: 98 98% 55%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .neon-accent {
+    @apply text-accent drop-shadow-[0_0_8px_theme(colors.accent.DEFAULT)];
+  }
+  .neon-primary {
+    @apply text-primary drop-shadow-[0_0_8px_theme(colors.primary.DEFAULT)];
+  }
+  .btn-glow {
+    @apply hover:shadow-[0_0_15px_-3px_theme(colors.primary.DEFAULT)] transition-shadow duration-300;
+  }
+  .btn-glow-accent {
+    @apply hover:shadow-[0_0_15px_-3px_theme(colors.accent.DEFAULT)] transition-shadow duration-300;
+  }
+}
